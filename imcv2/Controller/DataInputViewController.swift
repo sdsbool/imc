@@ -21,6 +21,7 @@ class DataInputViewController: UIViewController {
         
         
         customInputView?.delegate = self
+        customInputView?.backgroundColor = .white
         
         
         if let customInputView = customInputView {
@@ -45,7 +46,7 @@ extension DataInputViewController: DataInputProtocol {
         let imc = dataModel.calculateIMC()
         
         //invoco el siguiente vc
-        let nextStep = DataDetailViewController(nibName: "DataDetailViewController", bundle: nil)
+        let nextStep = DataDetailViewController()
         nextStep.info = imc
         
         //navego al siguiente VC

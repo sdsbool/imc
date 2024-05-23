@@ -124,6 +124,7 @@ class DataInputView: UIView {
         calculate.setTitle("CALCULATE", for: .normal)
         calculate.setTitleColor(.black , for: .normal)
         calculate.tintColor = .blue
+        calculate.backgroundColor = .white
         calculate.addTarget(self, action: #selector(calculateButtonTapped), for: .touchUpInside)
         calculate.translatesAutoresizingMaskIntoConstraints = false
         
@@ -137,6 +138,9 @@ class DataInputView: UIView {
         //le va a avisar al ViewController que ya tiene la info y le va a mandar la info (IMCDataModel cargado)
         delegate?.dataRecorded(dataModel: imcModel)
         //aca hace algo
+        
+        
+        
     }
 
     override init(frame: CGRect) {

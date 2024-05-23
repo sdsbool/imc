@@ -15,20 +15,25 @@ class DataDetailViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         customDetailView = DataDetailView()
-        customDetailView.
+        customDetailView?.textTitleResult.text = String(describing: info)
+        customDetailView?.backgroundColor = .white
+        customDetailView?.textTitleResult.textColor = .black
+        
+        customDetailView?.translatesAutoresizingMaskIntoConstraints = false
+        
+        /*NSLayoutConstraint.activate([
+            customDetailView.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor),
+            customDetailView.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor),
+            customDetailView.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor),
+            customDetailView.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor)
+        
+       */
+        
     }
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        
-        
-        //tengo que hacer algo para mostrar en el view el valor obtenido anteriormente
-        
-        
-
-        //configurar la SecondView
         // Do any additional setup after loading the view.
     }
 
