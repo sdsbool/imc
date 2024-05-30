@@ -21,9 +21,10 @@ public class DataDetailView: UIView {
         return titleResult
     }()
     
+    
     public let textResult: UILabel = {
         let result = UILabel()
-        result.text = "0"
+        result.text = "0.0"
         result.textAlignment = .center
         result.font = UIFont(name: "Arial Rounded MT Bold"  , size: 22)
         result.translatesAutoresizingMaskIntoConstraints = false
@@ -31,6 +32,19 @@ public class DataDetailView: UIView {
         
         return result
     }()
+    
+    
+    public let textRecomendation: UILabel = {
+        let recomendation = UILabel()
+        recomendation.text = ""
+        recomendation.textAlignment = .center
+        recomendation.font = UIFont(name: "Arial Rounded MT Bold"  , size: 22)
+        recomendation.translatesAutoresizingMaskIntoConstraints = false
+        recomendation.textColor = UIColor.green
+        
+        return recomendation
+    }()
+    
     
     override init(frame: CGRect) {
         super.init(frame: .zero)
@@ -50,9 +64,7 @@ public class DataDetailView: UIView {
     public func addSubviews() {
         addSubview(textTitleResult)
         addSubview(textResult)
-
-        
-        
+        addSubview(textRecomendation)
     }
     
     public func configureConstraints() {
@@ -62,7 +74,12 @@ public class DataDetailView: UIView {
             textTitleResult.centerXAnchor.constraint(equalTo: centerXAnchor),
             textTitleResult.centerYAnchor.constraint(equalTo: topAnchor, constant: 50),
             
-            //textResult.
+            textResult.centerXAnchor.constraint(equalTo: centerXAnchor),
+            textResult.centerYAnchor.constraint(equalTo: centerYAnchor),
+            
+            textRecomendation.topAnchor.constraint(equalTo: textResult.bottomAnchor, constant: 20),
+            textRecomendation.leadingAnchor.constraint(equalTo: leadingAnchor),
+            textRecomendation.trailingAnchor.constraint(equalTo: trailingAnchor)
             ])
     }
 }
